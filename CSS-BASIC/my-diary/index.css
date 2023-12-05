@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: lightgray;
+    margin: 100px;
+}
+
+.container {
+    border: 1px solid;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.wrapper {
+    padding: 20px;
+}
+
+.wrapper__head__title {
+    color: white;
+    font-weight: 800;
+    background-color: orange;
+    text-align: center;
+}
+
+.wrapper__head__sub-title {
+    font-weight: 600;
+}
+
+#point {
+    color: orange;
+    text-decoration: underline;
+}
+
+hr {
+    border: 1px dotted;
+}
+
+.wrapper__body__content {
+    border: 2px solid gainsboro;
+    padding: 0 15px;
+}
+
+.wrapper__body__content__title {
+    background-color: whitesmoke;
+}
+
+.wrapper__body__content__text {
+    font-size: small;
+    font-weight: 600;
+}
+
+#kimchi {
+    color: red;
+}
+
+#cheeze {
+    color: darkorange;
+}
+
+#feeling {
+    color: blue;
+    font-size: medium;
+    font-style: italic;
+}
+
+.wrapper__body__content__date-and-weather {
+    font-size: x-small;
+    color: gray;
+    text-align: right;
+}
+
