@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <link href="./final.css" rel="stylesheet">
+    <script src="./final.js"></script> 
+</head>
+<body>
+    <div class="background">
+        <div class="title">코드캠프 회원가입</div>
+        <div>
+            <input type="email" class="inputStyle" id="email" placeholder="이메일을 입력해 주세요.">
+            <div class="errorMsgStyle" id="emailError">이메일이 올바르지 않습니다.</div>
+        </div>
+        <div>
+            <input type="text" class="inputStyle" id="name" placeholder="이름을 입력해 주세요.">
+            <div class="errorMsgStyle" id="nameError">이름이 올바르지 않습니다.</div>
+        </div>
+        <div>
+            <input type="password" class="inputStyle" id="password" placeholder="비밀번호를 입력해 주세요.">
+            <div class="errorMsgStyle" id="passwordError">비밀번호를 입력해 주세요.</div>
+        </div>
+        <div>
+            <input type="password" class="inputStyle" id="checkPassword" placeholder="비밀번호를 다시 입력해 주세요.">
+            <div class="errorMsgStyle" id="checkPasswordError">비밀번호를 입력해 주세요.</div>
+        </div>
+        <div class="phoneNum">
+            <input type="text" class="phoneStyle" id="frontPhoneNum" oninput=changeFocusMiddlePhone() maxlength="3"><span class="hyphen"> ㅡ</span>
+            <input type="text" class="phoneStyle" id="middlePhoneNum" oninput=changeFocusBackPhone() maxlength="4"><span class="hyphen"> ㅡ</span>
+            <input type="text" class="phoneStyle" id="backPhoneNum" oninput=changeAbleSendBtn() maxlength="4">
+        </div>
+        <div class="sendCertiNum">
+            <span id="certiNum">000000</span>
+            <button id="sendCertiNumBtn" disabled onclick=clickSendCertiNumBtn()>인증번호 전송</button>
+        </div>
+        <div class="checkCertiNum">
+            <span id="timer">3:00</span>
+            <button id="checkCertiNumBtn" disabled onclick=clickCheckCertiNumBtn()>인증확인</button>
+        </div>
+        <div>
+            <select class="inputStyle" id="region" onchange=this.options[this.selectedIndex].text>
+                <option selected disabled>지역을 선택하세요.</option>
+                <option>서울</option>
+                <option>인천</option>
+                <option>경기</option>
+            </select>
+            <div class="errorMsgStyle" id="choiceRegionError">지역을 선택해 주세요.</div>
+        </div>
+        <div class="choiceGender">
+            <input type="radio" name="gender" value="female" id="female"><span class="genderText">여성</span>
+            <input type="radio" name="gender" value="male" id="male"><span class="genderText">남성</span>
+            <div class="errorMsgStyle" id="choiceGenderError">성별을 선택해 주세요.</div>
+        </div>
+        <hr>
+        <button id="signUpBtn" disabled onclick=clickSignUpBtn()>가입하기</button>
+    </div>
+</body>
+</html>

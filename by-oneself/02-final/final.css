@@ -1,0 +1,174 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+}
+
+.background {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 540px;
+    height: 960px;
+    border-radius: 20px;
+    background: linear-gradient(0deg, #FFFFFF, #FFFFFF);
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px 0px #0068FF40;
+}
+
+.title {
+    width: 380px;
+    height: 47px;
+    font-family: Noto Sans CJK KR;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 47px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #0068FF;
+    margin-bottom: 50px;
+}
+
+.inputStyle {
+    width: 380px;
+    height: 60px;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2; 
+    /* #0068FF; */
+    /* margin-bottom: 20px; */
+}
+
+.errorMsgStyle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: red;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+
+.phoneNum {
+    width: 380px;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.phoneStyle {
+    width: 100px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2;
+}
+
+.hyphen {
+    padding: 6.3px;
+}
+
+.sendCertiNum {
+    margin-left: 196.8px;
+}
+
+#certiNum {
+    width: 60px;
+    height: 27px;
+    font-family: Noto Sans CJK KR;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0068FF;
+    line-height: 27px;
+    letter-spacing: 0em;
+}
+
+#sendCertiNumBtn {
+    width: 120px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2;
+    font-family: Noto Sans CJK KR;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* color: #0068FF; */
+    margin-bottom: 20px;
+}
+
+.checkCertiNum {
+    margin-left: 221px;
+}
+
+#timer {
+    width: 35px;
+    height: 27px;
+    font-family: Noto Sans CJK KR;
+    font-size: 18px;
+    font-weight: 400;
+    color: #0068FF;
+    line-height: 27px;
+    letter-spacing: 0em;
+    text-align: right;
+}
+
+#checkCertiNumBtn {
+    width: 120px;
+    height: 40px;
+    border-radius: 7px;
+    border: 1px solid #D2D2D2;
+    /* background: #0068FF; */
+    font-family: Noto Sans CJK KR;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0em;
+    text-align: center;
+    /* color: #FFFFFF; */
+    margin-bottom: 20px;
+}
+
+.choiceGender {
+    width: 140px;
+    height: 23.94px;
+    border: 1px;
+    margin-bottom: 20px;
+}
+
+#female, #male {
+    width: 20px;
+    height: 19.95px;
+    background: linear-gradient(0deg, #D2D2D2, #D2D2D2),
+                linear-gradient(0deg, #EBEBEB, #EBEBEB);
+    border: 1px solid #D2D2D2;
+}
+
+[type="radio"],
+.genderText {
+    width: 55px;
+    height: 23.94px;
+    border: 1px;
+    padding: 0px 10px 0px 5px;
+    vertical-align: middle;
+}
+
+hr {
+    width: 380px;
+    height: 1px;
+    margin-bottom: 20px;
+}
+
+#signUpBtn {
+    width: 380px;
+    height: 75px;
+    border-radius: 10px;
+    border: 1px solid #D2D2D2;
+    /* border: 1px solid #0068FF; */
+    font-family: Noto Sans CJK KR;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 27px;
+    letter-spacing: 0em;
+    /* color: #0068FF; */
+}

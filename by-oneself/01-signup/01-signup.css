@@ -1,0 +1,149 @@
+* {
+    box-sizing: border-box;
+}
+
+#browser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.background {
+    width: 670px;
+    height: 960px;
+
+    background: #FFFFFF;
+    border: 1px solid #AACDFF;
+    box-shadow: 7px 7px 39px rgba(0, 104, 255, 0.25);
+    border-radius: 20px;
+}
+
+.contentBox {
+    width: 470px;
+    height: 818px;
+
+    margin: 72px 100px 70px;
+}
+
+h3 {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 47px;
+
+    color: #0068FF;
+
+    margin-right: 4px;
+    margin-bottom: 60px;
+}
+
+label {
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #797979;
+
+    margin-right: 312px;
+}
+
+hr {
+    margin-top: 56.35px;
+    margin-bottom: 21px;
+}
+
+.radioArea {
+    margin: 50px 0px 50.06px 120px;
+}
+
+[type="radio"] {
+    vertical-align: -3px;
+
+    width: 20px;
+    height: 19.95px;
+
+    background: #EBEBEB;
+    border: 1px solid #D2D2D2;
+}
+
+.genderType {
+    width: 30px;
+    height: 23.94px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+
+    color: #000000;
+}
+
+#female {
+    margin-left: 5px;
+    margin-right: 30px;
+}
+
+#male {
+    margin-left: 5px;
+    margin-right: 165px;
+}
+
+[type="checkbox"] {
+    vertical-align: -4px;
+
+    width: 20px;
+    height: 20px;
+
+    background: #FFFFFF;
+    border: 1px solid #C4C4C4;
+    border-radius: 3px;
+
+    margin-left: 12px;
+}
+
+#agreement {
+    width: 419px;
+    height: 21px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+
+    color: #000000;
+
+    margin-right: 4px;
+}
+
+#lastHr {
+    margin: 30px 0px;
+}
+
+button {
+    width: 470px;
+    height: 75px;
+
+    background: #FFFFFF;
+    border: 1px solid #0068FF;
+    border-radius: 10px;
+}
+
+#summit {
+    width: 70px;
+    height: 27px;
+
+    font-family: 'Noto Sans CJK KR';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+
+    text-align: center;
+
+    color: #0068FF;
+}
