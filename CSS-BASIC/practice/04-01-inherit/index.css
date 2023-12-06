@@ -8,6 +8,11 @@
     border: 4px solid orange;
 }
 
+/* sj - border가 상속이 되었다면 아래와 같은 현상으로 나왔을 것임 */
+/* .inner-box, p {
+    border: 4px solid orange;
+} */
+
 .inner-box {
     color: red;
 }
