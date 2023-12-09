@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+button {
+    width: 150px;
+    padding: 10px;
+    border: 0;
+    border-radius: 5px;
+    background-color: #123ecf;
+    color: white;
+    text-align: left;
+}
+
+.practice1:hover {
+    cursor: pointer;
+    width: 215px;
+    transition-duration: 0.3s;
+}
+
+.practice2:hover {
+    cursor: pointer;
+    width: 215px;
+    background: #002398;
+    transition-duration: 0.3s;
+}
+
+.practice3:hover {
+    cursor: pointer;
+    width: 215px;
+    background: #002398;
+    transition-duration: 0.5s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-in-out;
+}
