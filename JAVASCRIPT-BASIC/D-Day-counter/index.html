@@ -3,20 +3,25 @@
 <head>
     <title>D-Day</title>
     <script>
-        // console.log("script 태그를 실행했어요.");
-        const output = function () {
-            console.log("함수를 실행했어요.");
+        const dateFormMaker = function () {
+            // console.log(document.querySelector('target-year-input')); // null
+            // console.log(document.querySelector('#target-year-input')); // <input id="target-year-input" class="target-input">
+            // console.log(document.querySelector('#target-year-input').value); // input 안에 들어있는 값
+            // console.log(document.querySelector('#target-month-input').value);
+            // console.log(document.querySelector('#target-date-input').value);
+
+            const inputYear = document.querySelector('#target-year-input').value;
+            const inputMonth = document.querySelector('#target-month-input').value;
+            const inputDate = document.querySelector('#target-date-input').value;
+
+            console.log(inputYear, inputMonth, inputDate);
         }
-        // output();
     </script>
 </head>
 <body>
-    <div id="div-id" class="div-class">안녕하세요.</div>
-    <div class="div-class">반갑습니다.</div>
-    <span style="color: red">잘 부탁드립니다.</span>
-    <span>인사해요.</span>
-    <input />
-    <!-- <button onclick="console.log('버튼이 눌렸어요.')">버튼</button> -->
-    <button onclick="output()">버튼</button>
+    <input id="target-year-input" class="target-input"/>
+    <input id="target-month-input" class="target-input"/>
+    <input id="target-date-input" class="target-input"/>
+    <button onclick="dateFormMaker()">버튼</button>
 </body>
 </html>
