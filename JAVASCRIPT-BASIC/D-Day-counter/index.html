@@ -5,6 +5,15 @@
         <title>D-Day</title>
         <link rel="stylesheet" href="./style.css">
         <script>
+            console.log('1===1', 1 === 1); // 1===1 true
+            console.log('1 > 2', 1 > 2); // 1 > 2 false
+            const check = 'check';
+            console.log("check === 'check'", check === 'check'); // check === 'check' true
+            console.log('check === 123', check === 123); // check === 123 false
+
+            const arr = [1, 2, 3];
+            console.log('arr === [1,2,3]', arr === [1, 2, 3]); // arr === [1,2,3] false
+
             const dateFormMaker = function () {
                 const inputYear = document.querySelector('#target-year-input').value;
                 const inputMonth = document.querySelector('#target-month-input').value;
