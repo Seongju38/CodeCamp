@@ -5,14 +5,50 @@
         <title>D-Day</title>
         <link rel="stylesheet" href="./style.css">
         <script>
-            console.log('1===1', 1 === 1); // 1===1 true
-            console.log('1 > 2', 1 > 2); // 1 > 2 false
-            const check = 'check';
-            console.log("check === 'check'", check === 'check'); // check === 'check' true
-            console.log('check === 123', check === 123); // check === 123 false
+            // let name = 'Jason';
+            let name = 'Peter';
+            if (name === 'Jason') {
+                console.log('조건문 통과');
+            }
 
-            const arr = [1, 2, 3];
-            console.log('arr === [1,2,3]', arr === [1, 2, 3]); // arr === [1,2,3] false
+
+            const obj = {
+                name: 'Jason',
+                // name: 'Peter',
+                // name: 'Alice',
+                // age: 25
+                age: 20
+            }
+
+            if (obj.name === 'Jason') {
+                // console.log('안녕, Jason!');
+                console.log('안녕, ' + obj.name);
+            }
+            if (obj.name === 'Peter') {
+                console.log('안녕, ' + obj.name);
+            }
+
+
+            if (obj.name === 'Jason') {
+                console.log('안녕, ' + obj.name);
+            } else if (obj.name === 'Peter') {
+                console.log('안녕, ' + obj.name);
+            } else {
+                console.log('넌 우리 멤버가 아니구나');
+            }
+
+
+            if (obj.name === 'Jason' || obj.name === 'Peter') {
+                console.log('안녕, ' + obj.name);
+            } else {
+                console.log('넌 우리 멤버가 아니구나');
+            }
+
+            if (obj.name === 'Jason' && obj.age >= 25) {
+                console.log('안녕, ' + obj.name + ', 너의 나이는 ' + obj.age);
+            } else {
+                console.log('넌 우리 멤버가 아니구나');
+            }
 
             const dateFormMaker = function () {
                 const inputYear = document.querySelector('#target-year-input').value;
