@@ -4,46 +4,7 @@
     <head>
         <title>D-Day</title>
         <link rel="stylesheet" href="./style.css">
-        <script>
-            const dateFormMaker = function () {
-                const inputYear = document.querySelector('#target-year-input').value;
-                const inputMonth = document.querySelector('#target-month-input').value;
-                const inputDate = document.querySelector('#target-date-input').value;
-
-                const dateFormat = `${inputYear}-${inputMonth}-${inputDate}`;
-
-                return dateFormat;
-            }
-
-            const counterMaker = function () {
-                const targetDateInput = dateFormMaker();
-                const nowDate = new Date();
-                const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0);
-                const remaining = (targetDate - nowDate) / 1000;
-
-                // console.log(remaining); // 잘못된 날짜가 들어가면 remainging === NaN 
-                // console.log(remaining === NaN); // false
-                // console.log(isNaN(remaining), remaining);
-
-                // 만약 remaining이 0이라면, 타이머가 종료되었습니다. 출력 // 수도 코드
-                // if (remaining === 0 || remaining < 0) {
-                if (remaining <= 0) {
-                    console.log('타이머가 종료되었습니다.');
-                }
-                // else if (remaining === NaN) { // NaN 확인 할 때는 이런식으로 비교연산자를 사용하면 안먹힘
-                else if (isNaN(remaining)) {
-                    // 만약 잘못된 날짜가 들어왔다면, 유효한 시간대가 아닙니다. 출력
-                    console.log('유효한 시간대가 아닙니다.');
-                }
-
-                const remainingDate = Math.floor((remaining / 3600) / 24);
-                const remainingHours = Math.floor((remaining / 3600) % 24);
-                const remainigMin = Math.floor((remaining / 60) % 60);
-                const remainingSec = Math.floor(remaining % 60);
-
-                console.log(remainingDate, remainingHours, remainigMin, remainingSec);
-            }
-        </script>
+        <script src="./script.js" defer></script>
     </head>
 
     <body>
@@ -66,12 +27,14 @@
                 <span>초</span>
             </div>
         </div>
+        <div id="d-day-message"></div>
         <div id="target-selector">
             <input id="target-year-input" class="target-input" size="5" /> -
             <input id="target-month-input" class="target-input" size="5" /> -
             <input id="target-date-input" class="target-input" size="5" />
         </div>
         <button onclick="counterMaker()" id="start-btn">카운트다운 시작</button>
+        <!-- <script src="./script.js"></script> -->
     </body>
 
 </html>
