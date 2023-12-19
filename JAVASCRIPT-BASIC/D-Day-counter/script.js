@@ -29,22 +29,22 @@ const counterMaker = function () {
     messageContainer.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
   }
 
-  const remainingDate = Math.floor(remaining / 3600 / 24);
-  const remainingHours = Math.floor((remaining / 3600) % 24);
-  const remainingMin = Math.floor((remaining / 60) % 60);
-  const remainingSec = Math.floor(remaining % 60);
+  const remainingObj = {
+    remainingDate: Math.floor(remaining / 3600 / 24),
+    remainingHours: Math.floor((remaining / 3600) % 24),
+    remainingMin: Math.floor((remaining / 60) % 60),
+    remainingSec: Math.floor(remaining % 60),
+  };
 
-  //   const days = document.querySelector("#days");
-  //   const hours = document.querySelector("#hours");
-  //   const min = document.querySelector("#min");
-  //   const sec = document.querySelector("#sec");
-  const days = document.getElementById("days");
-  const hours = document.getElementById("hours");
-  const min = document.getElementById("min");
-  const sec = document.getElementById("sec");
+  const documentObj = {
+    days: document.getElementById("days"),
+    hours: document.getElementById("hours"),
+    min: document.getElementById("min"),
+    sec: document.getElementById("sec"),
+  };
 
-  days.textContent = remainingDate;
-  hours.textContent = remainingHours;
-  min.textContent = remainingMin;
-  sec.textContent = remainingSec;
+  documentObj["days"].textContent = remainingObj["remainingDate"];
+  documentObj["hours"].textContent = remainingObj["remainingHours"];
+  documentObj["min"].textContent = remainingObj["remainingMin"];
+  documentObj["sec"].textContent = remainingObj["remainingSec"];
 };
