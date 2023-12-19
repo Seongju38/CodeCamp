@@ -1,7 +1,7 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
 
-container.style.display = "none";
+// container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
 
 const dateFormMaker = function () {
@@ -34,5 +34,17 @@ const counterMaker = function () {
   const remainingMin = Math.floor((remaining / 60) % 60);
   const remainingSec = Math.floor(remaining % 60);
 
-  console.log(remainingDate, remainingHours, remainingMin, remainingSec);
+  //   const days = document.querySelector("#days");
+  //   const hours = document.querySelector("#hours");
+  //   const min = document.querySelector("#min");
+  //   const sec = document.querySelector("#sec");
+  const days = document.getElementById("days");
+  const hours = document.getElementById("hours");
+  const min = document.getElementById("min");
+  const sec = document.getElementById("sec");
+
+  days.textContent = remainingDate;
+  hours.textContent = remainingHours;
+  min.textContent = remainingMin;
+  sec.textContent = remainingSec;
 };
