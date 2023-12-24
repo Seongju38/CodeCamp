@@ -27,7 +27,7 @@ const counterMaker = function () {
     container.style.display = "none";
     messageContainer.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
     messageContainer.style.display = "flex";
-    return; // 불필요하게 내려가서 연산 할 필요가 없음. 바로 함수 종료를 위함.
+    return;
   } else if (isNaN(remaining)) {
     container.style.display = "none";
     messageContainer.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
@@ -55,5 +55,9 @@ const counterMaker = function () {
 const starter = function () {
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  counterMaker();
+  for (let i = 0; i < 100; i++) {
+    setTimeout(() => {
+      counterMaker();
+    }, 1000 * i);
+  } // 100번이 끝나면 멈출 것이고, 타이머가 동작하는데도 뚝딱거림.
 };
