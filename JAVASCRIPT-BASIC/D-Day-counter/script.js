@@ -55,9 +55,9 @@ const counterMaker = function () {
 const starter = function () {
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  for (let i = 0; i < 100; i++) {
-    setTimeout(() => {
-      counterMaker();
-    }, 1000 * i);
-  } // 100번이 끝나면 멈출 것이고, 타이머가 동작하는데도 뚝딱거림.
+  counterMaker(); // 없으면 최초 실행 시 또한 1초 후에 일어남.
+  setInterval(counterMaker, 1000);
+  //   for (let i = 0; i < 100; i++) {
+  //     setTimeout(counterMaker, 1000 * i);
+  //   }
 };
