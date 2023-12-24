@@ -1,5 +1,6 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
+const intervalIdArr = [];
 
 container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
@@ -27,11 +28,13 @@ const counterMaker = function () {
     container.style.display = "none";
     messageContainer.innerHTML = "<h3>타이머가 종료되었습니다.</h3>";
     messageContainer.style.display = "flex";
+    setClearInterval();
     return;
   } else if (isNaN(remaining)) {
     container.style.display = "none";
     messageContainer.innerHTML = "<h3>유효한 시간대가 아닙니다.</h3>";
     messageContainer.style.display = "flex";
+    setClearInterval();
     return;
   }
 
@@ -55,9 +58,16 @@ const counterMaker = function () {
 const starter = function () {
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  counterMaker(); // 없으면 최초 실행 시 또한 1초 후에 일어남.
-  setInterval(counterMaker, 1000);
-  //   for (let i = 0; i < 100; i++) {
-  //     setTimeout(counterMaker, 1000 * i);
-  //   }
+  counterMaker();
+  const IntervalId = setInterval(counterMaker, 1000);
+  intervalIdArr.push(IntervalId);
+};
+
+const setClearInterval = function () {
+  container.style.display = "none";
+  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
+  messageContainer.style.display = "flex";
+  for (let i = 0; i < intervalIdArr.length; i++) {
+    clearInterval(intervalIdArr[i]);
+  }
 };
