@@ -11,7 +11,7 @@ const createTodo = function () {
   });
 
   newLi.addEventListener("dblclick", () => {
-    newLi.remove(); // 더블 클릭 시 해당 요소 삭제
+    newLi.remove();
   });
 
   newSpan.textContent = todoInput.value;
@@ -24,5 +24,12 @@ const createTodo = function () {
 const keyCodeCheck = function () {
   if (window.event.keyCode === 13 && todoInput.value !== "") {
     createTodo();
+  }
+};
+
+const deleteAll = function () {
+  const liList = document.querySelectorAll("li"); // 소괄호 안에 있는 해당 태그들을 모두 가져옴.
+  for (let i = 0; i < liList.length; i++) {
+    liList[i].remove();
   }
 };
