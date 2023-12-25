@@ -2,6 +2,9 @@ const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
 const intervalIdArr = [];
 
+const savedDate = localStorage.getItem("saved-date");
+console.log(savedDate);
+
 container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
 
@@ -62,6 +65,7 @@ const counterMaker = function (data) {
 
 const starter = function () {
   const targetDateInput = dateFormMaker();
+  localStorage.setItem("saved-date", targetDateInput);
   container.style.display = "flex";
   messageContainer.style.display = "none";
   setClearInterval();
