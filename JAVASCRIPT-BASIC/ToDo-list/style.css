@@ -38,3 +38,22 @@ body {
     /* 마우스 드래그 막음 */
     user-select: none; 
 }
+
+.complete {
+    color: rgb(155, 155, 155);
+    text-decoration: line-through;
+}
+
+li button {
+    background-color: mintcream;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin: 0.5rem;
+    border: 2px solid black;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+li button:active {
+    border: 2px solid gray
+}
