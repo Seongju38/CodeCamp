@@ -2,6 +2,12 @@ const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
 const savedDate = localStorage.getItem("saved-date");
 
+if (savedDate) {
+  document.getElementById("target-year-input").value = savedDate.split("-")[0];
+  document.getElementById("target-month-input").value = savedDate.split("-")[1];
+  document.getElementById("target-date-input").value = savedDate.split("-")[2];
+}
+
 const intervalIdArr = [];
 
 container.style.display = "none";
@@ -91,19 +97,9 @@ const resetTimer = function () {
   messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
   messageContainer.style.display = "flex";
 
-  //   document.getElementById("target-year-input").value = "";
-  //   document.getElementById("target-month-input").value = "";
-  //   document.getElementById("target-date-input").value = "";
-
-  const inputValueArr = [
-    "target-year-input",
-    "target-month-input",
-    "target-date-input",
-  ];
-
-  for (let inputId of inputValueArr) {
-    document.getElementById(inputId).value = "";
-  }
+  document.getElementById("target-year-input").value = "";
+  document.getElementById("target-month-input").value = "";
+  document.getElementById("target-date-input").value = "";
 
   setClearInterval();
 };
