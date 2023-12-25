@@ -18,6 +18,9 @@ const dateFormMaker = function () {
 };
 
 const counterMaker = function (data) {
+  if (data !== savedDate) {
+    localStorage.setItem("saved-date", data);
+  }
   const nowDate = new Date();
   const targetDate = new Date(data).setHours(0, 0, 0, 0);
   const remaining = (targetDate - nowDate) / 1000;
@@ -62,9 +65,10 @@ const counterMaker = function (data) {
   }
 };
 
-const starter = function () {
-  const targetDateInput = dateFormMaker();
-  localStorage.setItem("saved-date", targetDateInput);
+const starter = function (targetDateInput) {
+  if (!targetDateInput) {
+    targetDateInput = dateFormMaker();
+  }
   container.style.display = "flex";
   messageContainer.style.display = "none";
   setClearInterval();
@@ -76,6 +80,7 @@ const starter = function () {
 };
 
 const setClearInterval = function () {
+  localStorage.removeItem("saved-date");
   for (let i = 0; i < intervalIdArr.length; i++) {
     clearInterval(intervalIdArr[i]);
   }
@@ -89,7 +94,8 @@ const resetTimer = function () {
 };
 
 if (savedDate) {
-  starter();
+  starter(savedDate);
 } else {
-  console.log("data is null");
+  container.style.display = "none";
+  messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
 }
