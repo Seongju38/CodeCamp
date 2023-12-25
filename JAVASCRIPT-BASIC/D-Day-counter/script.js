@@ -1,9 +1,8 @@
 const messageContainer = document.querySelector("#d-day-message");
 const container = document.querySelector("#d-day-container");
-const intervalIdArr = [];
-
 const savedDate = localStorage.getItem("saved-date");
-console.log(savedDate);
+
+const intervalIdArr = [];
 
 container.style.display = "none";
 messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
@@ -88,3 +87,9 @@ const resetTimer = function () {
   messageContainer.style.display = "flex";
   setClearInterval();
 };
+
+if (savedDate) {
+  starter();
+} else {
+  console.log("data is null");
+}
