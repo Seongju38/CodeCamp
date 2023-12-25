@@ -44,9 +44,18 @@ const counterMaker = function (data) {
   const documentArr = ["days", "hours", "min", "sec"];
   const timeKeys = Object.keys(remainingObj);
 
+  const format = function (time) {
+    if (time < 10) {
+      return "0" + time;
+    } else {
+      return time;
+    }
+  };
+
   let i = 0;
   for (let tag of documentArr) {
-    document.getElementById(tag).textContent = remainingObj[timeKeys[i]];
+    const remainingTime = format(remainingObj[timeKeys[i]]);
+    document.getElementById(tag).textContent = remainingTime;
     i++;
   }
 };
@@ -55,6 +64,7 @@ const starter = function () {
   const targetDateInput = dateFormMaker();
   container.style.display = "flex";
   messageContainer.style.display = "none";
+  setClearInterval();
   counterMaker(targetDateInput);
   const IntervalId = setInterval(() => {
     counterMaker(targetDateInput);
