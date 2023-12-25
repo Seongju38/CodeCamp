@@ -90,6 +90,21 @@ const resetTimer = function () {
   container.style.display = "none";
   messageContainer.innerHTML = "<h3>D-Day를 입력해 주세요.</h3>";
   messageContainer.style.display = "flex";
+
+  //   document.getElementById("target-year-input").value = "";
+  //   document.getElementById("target-month-input").value = "";
+  //   document.getElementById("target-date-input").value = "";
+
+  const inputValueArr = [
+    "target-year-input",
+    "target-month-input",
+    "target-date-input",
+  ];
+
+  for (let inputId of inputValueArr) {
+    document.getElementById(inputId).value = "";
+  }
+
   setClearInterval();
 };
 
