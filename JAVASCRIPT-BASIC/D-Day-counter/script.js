@@ -15,13 +15,9 @@ const dateFormMaker = function () {
   return dateFormat;
 };
 
-const counterMaker = function () {
-  const messageContainer = document.querySelector("#d-day-message");
-  messageContainer.textContent = "D-Day를 입력해 주세요.";
-
-  const targetDateInput = dateFormMaker();
+const counterMaker = function (data) {
   const nowDate = new Date();
-  const targetDate = new Date(targetDateInput).setHours(0, 0, 0, 0);
+  const targetDate = new Date(data).setHours(0, 0, 0, 0);
   const remaining = (targetDate - nowDate) / 1000;
 
   if (remaining <= 0) {
@@ -56,10 +52,13 @@ const counterMaker = function () {
 };
 
 const starter = function () {
+  const targetDateInput = dateFormMaker();
   container.style.display = "flex";
   messageContainer.style.display = "none";
-  counterMaker();
-  const IntervalId = setInterval(counterMaker, 1000);
+  counterMaker(targetDateInput);
+  const IntervalId = setInterval(() => {
+    counterMaker(targetDateInput);
+  }, 1000);
   intervalIdArr.push(IntervalId);
 };
 
