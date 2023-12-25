@@ -10,11 +10,14 @@ const createTodo = function () {
     newLi.classList.toggle("complete");
   });
 
+  newLi.addEventListener("dblclick", () => {
+    newLi.remove(); // 더블 클릭 시 해당 요소 삭제
+  });
+
   newSpan.textContent = todoInput.value;
   newLi.appendChild(newBtn);
   newLi.appendChild(newSpan);
   todoList.appendChild(newLi);
-  console.log(newLi);
   todoInput.value = "";
 };
 
