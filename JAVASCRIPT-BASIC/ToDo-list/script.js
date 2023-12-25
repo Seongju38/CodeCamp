@@ -20,7 +20,6 @@ const createTodo = function () {
   todoList.appendChild(newLi);
   todoInput.value = "";
 
-  //   console.log(todoList.children[0].querySelector("span").textContent);
   saveItemsFn();
 };
 
@@ -40,8 +39,11 @@ const deleteAll = function () {
 const saveItemsFn = function () {
   const saveItems = [];
   for (let i = 0; i < todoList.children.length; i++) {
-    const todo = todoList.children[i].querySelector("span").textContent;
-    saveItems.push(todo);
+    const todoObj = {
+      contents: todoList.children[i].querySelector("span").textContent,
+      complete: todoList.children[i].classList.contains("complete"),
+    };
+    saveItems.push(todoObj);
   }
   console.log(saveItems);
 };
