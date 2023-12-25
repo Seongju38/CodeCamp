@@ -86,7 +86,6 @@ const starter = function (targetDateInput) {
 };
 
 const setClearInterval = function () {
-  localStorage.removeItem("saved-date");
   for (let i = 0; i < intervalIdArr.length; i++) {
     clearInterval(intervalIdArr[i]);
   }
@@ -100,6 +99,8 @@ const resetTimer = function () {
   document.getElementById("target-year-input").value = "";
   document.getElementById("target-month-input").value = "";
   document.getElementById("target-date-input").value = "";
+
+  localStorage.removeItem("saved-date");
 
   setClearInterval();
 };
