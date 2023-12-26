@@ -8,6 +8,7 @@ const createTodo = function () {
 
   newBtn.addEventListener("click", () => {
     newLi.classList.toggle("complete");
+    saveItemsFn();
   });
 
   newLi.addEventListener("dblclick", () => {
@@ -45,5 +46,6 @@ const saveItemsFn = function () {
     };
     saveItems.push(todoObj);
   }
-  console.log(saveItems);
+
+  localStorage.setItem('save-items', JSON.stringify(saveItems));
 };
