@@ -1,13 +1,7 @@
 const todoInput = document.querySelector("#todo-input");
 const todoList = document.querySelector("#todo-list");
 
-const savedTodoList = JSON.parse(localStorage.getItem('saved-items'));
-
-if (savedTodoList) {
-  for (let i = 0; i < savedTodoList.length; i++) {
-    createTodo(savedTodoList[i]);
-  }
-}
+const savedTodoList = JSON.parse(localStorage.getItem("saved-items"));
 
 const createTodo = function (storageData) {
   let todoContents = todoInput.value;
@@ -60,5 +54,11 @@ const saveItemsFn = function () {
     saveItems.push(todoObj);
   }
 
-  localStorage.setItem('saved-items', JSON.stringify(saveItems));
+  localStorage.setItem("saved-items", JSON.stringify(saveItems));
 };
+
+if (savedTodoList) {
+  for (let i = 0; i < savedTodoList.length; i++) {
+    createTodo(savedTodoList[i]);
+  }
+}
