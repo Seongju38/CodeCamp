@@ -96,8 +96,15 @@ const askForLocation = function () {
 
 const promiseTest = function () {
   return new Promise((resolver, reject) => {
-    resolver(100);
+    setTimeout(() => {
+      resolver('success'); // 성공
+      //reject('error'); // 실패
+    }, 5000);
   })
 }
 
-console.log(promiseTest())
+// console.log(promiseTest()); // 이렇게 바로 하면 promise 객체가 뜨기 때문에 활용할 수가 없음
+// then을 사용하면 resolver 안에 있는 데이터가 res에 담아져서 받아와짐
+promiseTest().then((res) => {
+  console.log(res);
+})
