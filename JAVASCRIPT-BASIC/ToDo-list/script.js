@@ -72,7 +72,12 @@ if (savedTodoList) {
 }
 
 const accessToGeo = function (position) {
-  console.log(position);
+  const positionObj = {
+    latitude: position.coords.latitude,
+    longitude: position.coords.longitude,
+  };
+
+  console.log(positionObj);
 };
 
 const askForLocation = function () {
