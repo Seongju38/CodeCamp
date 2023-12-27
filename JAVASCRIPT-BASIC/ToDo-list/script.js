@@ -23,9 +23,6 @@ const createTodo = function (storageData) {
     saveItemsFn();
   });
 
-  // if (storageData.complete) { // storageData가 undefined인 경우에도 complete를 찾으려고 하니까 Error 발생
-  // if (storageData && storageData.complete) { // 아래와 같은 의미
-  // 옵셔널체이닝 : 객체 뒤에 ? 붙이면 객체가 실제로 존재할 때만 complete를 찾음
   if (storageData?.complete) {
     newLi.classList.add("complete");
   }
@@ -63,11 +60,6 @@ const saveItemsFn = function () {
     saveItems.push(todoObj);
   }
 
-  // if (saveItems.length === 0) {
-  //   localStorage.removeItem("saved-items");
-  // } else {
-  //   localStorage.setItem("saved-items", JSON.stringify(saveItems));
-  // }
   saveItems.length === 0
     ? localStorage.removeItem("saved-items")
     : localStorage.setItem("saved-items", JSON.stringify(saveItems));
@@ -78,3 +70,10 @@ if (savedTodoList) {
     createTodo(savedTodoList[i]);
   }
 }
+
+const askForLocation = function () {
+  navigator.geolocation.getCurrentPosition((position) => {
+    console.log(position);
+  });
+};
+askForLocation();
