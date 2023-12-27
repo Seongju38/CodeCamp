@@ -75,11 +75,11 @@ const weatherSearch = function (position) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=136b7d9376206ce02c081574d8e87d14`
   ).then((res) => {
-    // json data 받아오기
-    // JSON.parse() // 응답 바디만 존재할 때 사용 가능 (응답 헤더가 있으면 사용할 수 없음)
-    return res.json(); // 응답 헤더 + 바디 모두 있어도 정상적으로 동작
-  }).then((json) => {
-    console.log(json);
+    return res.json(); // then에서 return을 하면 또 다시 then을 받을 수 있음
+  }).then((json) => { // 이전 then에서 return한 data가 들어오게 됨 - res.json()이 시간이 오래 걸렸어서 제대로 동작할 때까지 기다려주기 위함
+    console.log(json.name, json.weather[0].description);
+  }).catch((err) => { // 요청이 제대로 이루어지지 않았을 경우 - then과 함께 항상 사용해주면 됨
+    console.error(err);
   })
 };
 
