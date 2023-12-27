@@ -72,10 +72,15 @@ if (savedTodoList) {
 }
 
 const weatherSearch = function (position) {
-  const openWeatherRes = fetch(
+  fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=136b7d9376206ce02c081574d8e87d14`
-  );
-  console.log(openWeatherRes);
+  ).then((res) => {
+    // json data 받아오기
+    // JSON.parse() // 응답 바디만 존재할 때 사용 가능 (응답 헤더가 있으면 사용할 수 없음)
+    return res.json(); // 응답 헤더 + 바디 모두 있어도 정상적으로 동작
+  }).then((json) => {
+    console.log(json);
+  })
 };
 
 const accessToGeo = function (position) {
@@ -92,19 +97,4 @@ const askForLocation = function () {
     console.log(err);
   });
 };
-//askForLocation();
-
-const promiseTest = function () {
-  return new Promise((resolver, reject) => {
-    setTimeout(() => {
-      resolver('success'); // 성공
-      //reject('error'); // 실패
-    }, 5000);
-  })
-}
-
-// console.log(promiseTest()); // 이렇게 바로 하면 promise 객체가 뜨기 때문에 활용할 수가 없음
-// then을 사용하면 resolver 안에 있는 데이터가 res에 담아져서 받아와짐
-promiseTest().then((res) => {
-  console.log(res);
-})
+askForLocation();
