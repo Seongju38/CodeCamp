@@ -20,7 +20,15 @@ const createTodo = function (storageData) {
 
   newLi.addEventListener("dblclick", () => {
     newLi.remove();
+    saveItemsFn();
   });
+
+  // if (storageData.complete) { // storageData가 undefined인 경우에도 complete를 찾으려고 하니까 Error 발생
+  // if (storageData && storageData.complete) { // 아래와 같은 의미
+  // 옵셔널체이닝 : 객체 뒤에 ? 붙이면 객체가 실제로 존재할 때만 complete를 찾음
+  if (storageData?.complete) {
+    newLi.classList.add("complete");
+  }
 
   newSpan.textContent = todoContents;
   newLi.appendChild(newBtn);
@@ -42,6 +50,7 @@ const deleteAll = function () {
   for (let i = 0; i < liList.length; i++) {
     liList[i].remove();
   }
+  saveItemsFn();
 };
 
 const saveItemsFn = function () {
@@ -54,7 +63,14 @@ const saveItemsFn = function () {
     saveItems.push(todoObj);
   }
 
-  localStorage.setItem("saved-items", JSON.stringify(saveItems));
+  // if (saveItems.length === 0) {
+  //   localStorage.removeItem("saved-items");
+  // } else {
+  //   localStorage.setItem("saved-items", JSON.stringify(saveItems));
+  // }
+  saveItems.length === 0
+    ? localStorage.removeItem("saved-items")
+    : localStorage.setItem("saved-items", JSON.stringify(saveItems));
 };
 
 if (savedTodoList) {
