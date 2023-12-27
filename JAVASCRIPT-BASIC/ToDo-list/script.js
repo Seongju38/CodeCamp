@@ -92,4 +92,12 @@ const askForLocation = function () {
     console.log(err);
   });
 };
-askForLocation();
+//askForLocation();
+
+const promiseTest = function () {
+  return new Promise((resolver, reject) => {
+    resolver(100);
+  })
+}
+
+console.log(promiseTest())
