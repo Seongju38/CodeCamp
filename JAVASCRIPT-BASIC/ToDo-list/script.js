@@ -71,9 +71,13 @@ if (savedTodoList) {
   }
 }
 
+const accessToGeo = function (position) {
+  console.log(position);
+};
+
 const askForLocation = function () {
-  navigator.geolocation.getCurrentPosition((position) => {
-    console.log(position);
+  navigator.geolocation.getCurrentPosition(accessToGeo, (err) => {
+    console.log(err);
   });
 };
 askForLocation();
