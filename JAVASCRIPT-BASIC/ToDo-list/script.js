@@ -71,6 +71,11 @@ if (savedTodoList) {
   }
 }
 
+const weatherDataActive = function ({ location, weather }) {
+  const locationNameTag = document.querySelector("#location-name-tag");
+  locationNameTag.textContent = location;
+};
+
 const weatherSearch = function ({ latitude, longitude }) {
   fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=136b7d9376206ce02c081574d8e87d14`
@@ -80,6 +85,11 @@ const weatherSearch = function ({ latitude, longitude }) {
     })
     .then((json) => {
       console.log(json.name, json.weather[0].main);
+      const weatherData = {
+        location: json.name,
+        weather: json.weather[0].main,
+      };
+      weatherDataActive(weatherData);
     })
     .catch((err) => {
       console.error(err);
@@ -89,7 +99,7 @@ const weatherSearch = function ({ latitude, longitude }) {
 const accessToGeo = function ({ coords }) {
   const { latitude, longitude } = coords;
   const positionObj = {
-    latitude, // shorthand property : 객체 key와 value의 이름이 같다면 생략 가능
+    latitude,
     longitude,
   };
 
