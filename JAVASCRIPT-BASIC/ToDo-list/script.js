@@ -71,22 +71,26 @@ if (savedTodoList) {
   }
 }
 
-const weatherSearch = function (position) {
+const weatherSearch = function ({ latitude, longitude }) {
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?lat=${position.latitude}&lon=${position.longitude}&appid=136b7d9376206ce02c081574d8e87d14`
-  ).then((res) => {
-    return res.json();
-  }).then((json) => {
-    console.log(json.name, json.weather[0].description);
-  }).catch((err) => {
-    console.error(err);
-  })
+    `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=136b7d9376206ce02c081574d8e87d14`
+  )
+    .then((res) => {
+      return res.json();
+    })
+    .then((json) => {
+      console.log(json.name, json.weather[0].main);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
 };
 
-const accessToGeo = function (position) {
+const accessToGeo = function ({ coords }) {
+  const { latitude, longitude } = coords;
   const positionObj = {
-    latitude: position.coords.latitude,
-    longitude: position.coords.longitude,
+    latitude, // shorthand property : 객체 key와 value의 이름이 같다면 생략 가능
+    longitude,
   };
 
   weatherSearch(positionObj);
