@@ -1,9 +1,8 @@
 import { useQuery, gql } from "@apollo/client";
-import { removeArgumentsFromDocument } from "@apollo/client/utilities";
 import { useRouter } from "next/router";
 
 const FETCH_BOARD = gql`
-  query fetchBoard($number: Int){
+  query fetchBoard($number: Int) {
     fetchBoard(number: $number) {
       number
       writer
@@ -18,7 +17,7 @@ export default function StaticRoutingMovedPage() {
   console.log(router);
 
   const { data } = useQuery(FETCH_BOARD, {
-    variables: { number: Number(router.query.qqq) }
+    variables: { number: Number(router.query.qqq) },
   });
 
   console.log(data);

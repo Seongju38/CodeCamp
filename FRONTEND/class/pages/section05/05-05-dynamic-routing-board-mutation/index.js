@@ -1,5 +1,4 @@
 import { useMutation, gql } from "@apollo/client";
-import { Alert } from "antd";
 import { useRouter } from "next/router";
 
 const 나의그래프큐엘셋팅 = gql`
@@ -18,7 +17,6 @@ export default function GraphqlMutationPage() {
   const [나의함수] = useMutation(나의그래프큐엘셋팅);
 
   const onClickSubmit = async () => {
-
     try {
       // try에 있는 내용을 시도하다가 실패하면, 다음에 있는 모든 줄들을 모두 무시하고, catch에 있는 내용이 실행됨.
 
@@ -33,8 +31,9 @@ export default function GraphqlMutationPage() {
       console.log(result.data.createBoard.number);
 
       // router.push("/section05/05-05-dynamic-routing-board-mutation-moved/" + result.data.createBoard.number);
-      router.push(`/section05/05-05-dynamic-routing-board-mutation-moved/${result.data.createBoard.number}`);
-
+      router.push(
+        `/section05/05-05-dynamic-routing-board-mutation-moved/${result.data.createBoard.number}`
+      );
     } catch (error) {
       alert(error.message);
     }
