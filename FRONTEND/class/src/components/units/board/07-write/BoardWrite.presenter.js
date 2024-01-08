@@ -8,7 +8,7 @@ export default function BoardWriteUI(props) {
         작성자: <RedInput type="text" onChange={props.aaa} />
         제목: <input type="text" onChange={props.bbb} />
         내용: <input type="text" onChange={props.ccc} />
-        <BlueButton onClick={props.ddd} isActive={true}>
+        <BlueButton onClick={props.ddd} isActive={props.isActive}>
           GRAPHQL_API 요청하기
         </BlueButton>
       </div>

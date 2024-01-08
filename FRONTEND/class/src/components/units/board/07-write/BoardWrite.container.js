@@ -4,6 +4,8 @@ import { 나의그래프큐엘셋팅 } from "./BoardWrite.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 
 export default function BoardWrite(props) {
+  const [isActive, setIsActive] = useState(false);
+
   const [writer, setWriter] = useState();
   const [title, setTitle] = useState();
   const [contents, setContents] = useState();
@@ -41,6 +43,7 @@ export default function BoardWrite(props) {
         bbb={onChangeWriter}
         ccc={onChangeTitle}
         ddd={onChangeContents}
+        isActive={isActive}
       />
       <div>$$$$$$$$ 여기는 컨테이너입니다 $$$$$$$$</div>
     </div>
