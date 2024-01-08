@@ -39,10 +39,10 @@ export default function BoardWrite(props) {
     <div>
       <div>$$$$$$$$ 여기는 컨테이너입니다 $$$$$$$$</div>
       <BoardWriteUI
-        aaa={onClickSubmit}
-        bbb={onChangeWriter}
-        ccc={onChangeTitle}
-        ddd={onChangeContents}
+        onClickSubmit={onClickSubmit}
+        onChangeWriter={onChangeWriter}
+        onChangeTitle={onChangeTitle}
+        onChangeContents={onChangeContents}
         isActive={isActive}
       />
       <div>$$$$$$$$ 여기는 컨테이너입니다 $$$$$$$$</div>
