@@ -37,8 +37,9 @@ export default function StaticRoutingMovedPage() {
 
   return (
     <div>
-      {data?.fetchBoards.map((el) => (
-        <div>
+      {data?.fetchBoards.map((el, index) => (
+        <div key={el.number}>
+          {/* index는 게시글을 삭제할 때, 다음 게시글이 올라오면서 기존 index와 동일한 값을 갖게 됨. 즉, 유일하지 않음*/}
           <span>
             <input type="checkbox" />
           </span>
