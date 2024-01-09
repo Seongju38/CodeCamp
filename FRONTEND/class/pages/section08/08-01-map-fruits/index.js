@@ -32,6 +32,15 @@ export default function MapFruitsPage() {
       <div>{aaa}</div>
       ================================================
       <div>{bbb}</div>
+      ================================================
+      <div>
+        {/* 3. 실무 효율적인 렌더링 예제 */}
+        {FRUITS.map((el) => (
+          <div>
+            {el.number} {el.title}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
