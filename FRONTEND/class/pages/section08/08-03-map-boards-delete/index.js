@@ -42,7 +42,7 @@ export default function StaticRoutingMovedPage() {
         // 특별한 이유가 없으면? Fragment로 감싸자! <div />는 1개 더 그려야되서 조금 느려짐
         // 1. 프레그먼트란? <></> , <Fragment></Fragment>
         // 2. 프레그먼트에 key 입력하는 방법? <Fragment key={1}></Fragment>
-        <Fragment key={el.number}>
+        <div key={el.number}>
           {/* index는 게시글을 삭제할 때, 다음 게시글이 올라오면서 기존 index와 동일한 값을 갖게 됨. 즉, 유일하지 않음*/}
           <span>
             <input type="checkbox" />
@@ -55,7 +55,7 @@ export default function StaticRoutingMovedPage() {
               삭제
             </button>
           </span>
-        </Fragment>
+        </div>
       ))}
     </div>
   );
