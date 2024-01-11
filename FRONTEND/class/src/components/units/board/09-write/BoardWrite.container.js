@@ -22,7 +22,7 @@ export default function BoardWrite(props) {
       },
     });
     console.log(result);
-    router.push(`/boards/${result.data.createBoard.number}`);
+    router.push(`/section09/09-03-boards/${result.data.createBoard.number}`);
   };
 
   const onClickUpdate = () => {
