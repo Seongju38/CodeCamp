@@ -27,13 +27,13 @@ export default function BoardWrite(props) {
   };
 
   const onClickUpdate = async () => {
+    const myVariables = { number: Number(router.query.number) };
+    if (writer) myVariables.writer = writer;
+    if (title) myVariables.title = title;
+    if (contents) myVariables.contents = contents;
+
     const result = await updateBoard({
-      variables: {
-        number: Number(router.query.number),
-        writer: writer,
-        title: title,
-        contents: contents,
-      },
+      variables: myVariables,
     });
     console.log(result);
     router.push(`/section09/09-04-boards/${result.data.updateBoard.number}`);
