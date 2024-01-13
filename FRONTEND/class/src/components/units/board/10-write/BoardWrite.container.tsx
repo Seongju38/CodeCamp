@@ -3,11 +3,8 @@ import { useState, ChangeEvent } from "react";
 import { 나의그래프큐엘셋팅, UPDATE_BOARD } from "./BoardWrite.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { useRouter } from "next/router";
+import { IBoardWriteProps, IMyVariables } from "./BoardWrite.types";
 
-interface IBoardWriteProps {
-  isEdit: boolean
-  data?: any
-}
 export default function BoardWrite(props: IBoardWriteProps) {
   const router = useRouter();
 
@@ -33,12 +30,6 @@ export default function BoardWrite(props: IBoardWriteProps) {
   };
 
   const onClickUpdate = async () => {
-    interface IMyVariables {
-      number: number
-      writer?: string
-      title?: string
-      contents?: string
-    }
     const myVariables: IMyVariables = {
       number: Number(router.query.number)
     };
