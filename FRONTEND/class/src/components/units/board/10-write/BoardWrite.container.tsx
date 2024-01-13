@@ -1,10 +1,14 @@
 import { useMutation } from "@apollo/client";
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import { 나의그래프큐엘셋팅, UPDATE_BOARD } from "./BoardWrite.queries";
 import BoardWriteUI from "./BoardWrite.presenter";
 import { useRouter } from "next/router";
 
-export default function BoardWrite(props) {
+interface IBoardWriteProps {
+  isEdit: boolean
+  data?: any
+}
+export default function BoardWrite(props: IBoardWriteProps) {
   const router = useRouter();
 
   const [writer, setWriter] = useState("");
@@ -29,7 +33,15 @@ export default function BoardWrite(props) {
   };
 
   const onClickUpdate = async () => {
-    const myVariables = { number: Number(router.query.number) };
+    interface IMyVariables {
+      number: number
+      writer?: string
+      title?: string
+      contents?: string
+    }
+    const myVariables: IMyVariables = {
+      number: Number(router.query.number)
+    };
     if (writer) myVariables.writer = writer;
     if (title) myVariables.title = title;
     if (contents) myVariables.contents = contents;
@@ -43,15 +55,15 @@ export default function BoardWrite(props) {
     );
   };
 
-  const onChangeWriter = (event) => {
+  const onChangeWriter = (event: ChangeEvent<HTMLInputElement>) => {
     setWriter(event.target.value);
   };
 
-  const onChangeTitle = (event) => {
+  const onChangeTitle = (event: ChangeEvent<HTMLInputElement>) => {
     setTitle(event.target.value);
   };
 
-  const onChangeContents = (event) => {
+  const onChangeContents = (event: ChangeEvent<HTMLInputElement>) => {
     setContents(event.target.value);
   };
 
