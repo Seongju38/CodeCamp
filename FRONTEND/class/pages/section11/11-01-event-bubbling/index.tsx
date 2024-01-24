@@ -16,6 +16,10 @@ export default function StaticRoutingMovedPage() {
 
   console.log(data?.fetchBoards);
 
+  const onClickAlert = (event: any) => {
+    alert(event.target.id + "님이 작성한 글입니다.");
+  }
+
   return (
     <div>
       {data?.fetchBoards.map((el: any) => (
@@ -23,9 +27,9 @@ export default function StaticRoutingMovedPage() {
           <span>
             <input type="checkbox" />
           </span>
-          <span style={{ margin: "10px" }}>{el.number}</span>
-          <span style={{ margin: "10px" }}>{el.title}</span>
-          <span style={{ margin: "10px" }}>{el.writer}</span>
+          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.number}</span>
+          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.title}</span>
+          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.writer}</span>
         </div>
       ))}
     </div>
