@@ -23,13 +23,13 @@ export default function StaticRoutingMovedPage() {
   return (
     <div>
       {data?.fetchBoards.map((el: any) => (
-        <div>
+        <div id={el.writer} onClick={onClickAlert}>
           <span>
             <input type="checkbox" />
           </span>
-          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.number}</span>
-          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.title}</span>
-          <span style={{ margin: "10px" }} id={el.writer} onClick={onClickAlert}>{el.writer}</span>
+          <span style={{ margin: "10px" }}>{el.number}</span>
+          <span style={{ margin: "10px" }}>{el.title}</span>
+          <span style={{ margin: "10px" }}>{el.writer}</span>
         </div>
       ))}
     </div>
