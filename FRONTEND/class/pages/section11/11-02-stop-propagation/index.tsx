@@ -27,10 +27,12 @@ export default function StaticRoutingMovedPage() {
   const qqq2 = () => {
     alert("2번 클릭");
   }
-  const qqq3 = () => {
+  const qqq3 = (event) => {
+    event.stopPropagation(); // 전파 중단
     alert("3번 클릭");
   }
-  const qqq4 = () => {
+  const qqq4 = (event) => {
+    event.stopPropagation();
     alert("4번 클릭");
   }
 
